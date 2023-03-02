@@ -1,0 +1,9 @@
+
+
+
+user ------------> home page(page 9) ------------------->open the details of that vendor----------->he will select that ....
+    (getting data from backend using get api)                    (select any vendor)                                       .
+                                                                                                                           .
+                                                                                                                           .
+                                                                                                                           .
+when he create proposal we will popup a form (7)<------after login rout to page(6)<-----now vendor will login/signup <---- .

@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.darkBg{
+    background-image: gray;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+.form-main{
+    position: absolute;    
+    top: 25%;
+    left: 20%;
+
+    background-color: white;
+    height: 70%;
+    width: 60%;   
+}
+.modalHeader{
+    height: 50px;
+    background: white;
+    overflow: hidden;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    
+}
+.closeBtn {
+    cursor: pointer;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    color: #0000006b;
+    background-color: white;   
+    transition: all 0.25s ease;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+    position: absolute;
+    right: 20px;
+    top: 22px;
+    align-self: flex-end;
+    margin-top: -7px;
+    margin-right: -7px;
+  }
+  .closeBtn:hover {
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+    transform: translate(-4px, 4px);
+  }
+.heading {
+    margin: 10px;
+    padding: 10px;
+    color: #2C3E50;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+  }
+.centered{
+    display: grid;
+    grid-template-columns: 1fr 1fr;    
+    text-align: left;
+}
+.form-div1{
+    margin-left: 50px;
+    margin-top: 10px;    
+}
+input, select{
+    margin: 5px 0px;
+    padding: 5px 0px;    
+}
+input{
+    width: 70%;
+}
