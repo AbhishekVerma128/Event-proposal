@@ -4,21 +4,21 @@
     box-sizing: border-box;
 }
 .darkBg{
-    background-image: gray;
+    background-image: url('../../images/background.jpg');
     height: 100vh;
+    width: 100%;
     background-position: center;
     background-size: cover;
 }
 .form-main{
     position: absolute;    
-    top: 25%;
-    left: 20%;
-
+    top: 14%;
+    left: 24%;
+   
     background-color: white;
-    height: 70%;
-    width: 60%;   
+    width: 50%;      
 }
-.modalHeader{
+.modalHeader{    
     height: 50px;
     background: white;
     overflow: hidden;
@@ -65,10 +65,63 @@
     margin-left: 50px;
     margin-top: 10px;    
 }
-input, select{
-    margin: 5px 0px;
-    padding: 5px 0px;    
-}
 input{
     width: 70%;
+    margin: 5px 0px;
+    padding: 5px 0px;  
+}
+select {
+    margin: 5px 0px;
+    padding: 5px 0px;  
+    width: 70%;
+}
+textarea{
+    width: 85%;
+    margin: 5px 0px;
+    padding: 5px 0px;  
+}
+.form-div2{
+    margin-top: 10px;
+}
+.postbtn{
+    background-color: rgb(38, 129, 165);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    width: 22%;
+    margin-left: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 7px;
+    margin-bottom: 2rem;
+}
+#galeria{
+    display: flex;
+    gap: 5px;
+}
+#galeria img{
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    opacity: 85%;
+}
+.image-div{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0px;
+}
+.image-div button{
+    margin-right: 55px;
+    margin-top: 3px;
+    padding: 2px 9px;
+    border: 2px solid rgb(71, 184, 232);
+    background-color: #fff;
+    color: rgb(71, 184, 232);
+    border-radius: 5px;
+}
+.eve{
+    width: 90%;
 }
