@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Open+Sans:wght@600&display=swap');
+.vendorDetailsMain{
+    margin: 50px 50px 0 50px;
+}
+.headingDiv{
+    display: flex;
+    justify-content: space-between;
+}
+.headingDiv>button{
+    width: 97px;
+    height: 34px;
+    border: 1px solid #0078DD ;
+    border-radius: 4px;
+    color: #006BD9;
+    font: normal normal 600 19px/26px Open Sans;
+    letter-spacing: 0.19px;
+    opacity: 1;
+}
+.firststPart{
+    width:"415px";
+    height:"550px";
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 4px;
+    opacity: 1;
+}
+#proposalDetail{
+    font-size: 20px;
+    font-weight: 300;
+    
+}
+#vendorName{
+    font-size: 25px;
+    font-weight: 500;
+}
+#ID{
+    background: #EAEAEA 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000003;
+    border-radius: 0px 3px 0px 0px;
+    opacity: 0.57;   
+    margin-left: 5px;
+}
+#ID >span{
+    font-weight: 700;
+}
+.Lable{
+    border-radius: 0px 3px 0px 0px;  
+    margin-left: 5px;
+    color: #767676;
+}
+.lableDetails{
+    color: black;
+    font-weight: 500;
+}
+.eventType{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 25%;
+}
+.eventDate{
+    display: flex;
+    justify-content: space-between;
+}
+#eventType{
+    background-color: #D9ECFF;
+    color: #006BD9;
+}
+.card-title{
+    text-align: left;
+    font: normal normal 600 19px/65px Open Sans;
+    letter-spacing: 0px;
+    color: #1E2022;
+    opacity: 1;
+}
+.secondCard{
+    width:"415px";
+    height:"496px";
+    height: 50%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #EDEDED;
+    border-radius: 4px;
+    opacity: 1;
+}
+.imgDiv>img{
+    margin: 5px;
+}
+.contactName{
+    margin-left: 12px;
+}
+.contactDetails{
+    margin-left: 7px;
+}
