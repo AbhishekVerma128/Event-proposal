@@ -9,7 +9,15 @@ import { useNavigate, Link } from 'react-router-dom';
 export default function ProposalList() {
   const navigate = useNavigate();
   const [proposal, setProposal] = useState([]);
-  console.log(proposal);
+  const [search, setSearch] = useState('');
+  
+  const searchedList = ()=>{    
+    const searchData = proposal.filter((item)=>
+      item.eventName.toLowerCase().includes(search.toLowerCase())
+    )
+    setProposal(searchData)
+  }
+
   useEffect(() => {
     const getItem = async () => {
       try {
@@ -24,8 +32,15 @@ export default function ProposalList() {
         console.log(e)
       }
     }
-    getItem()
-  }, [])
+    if(search===""){
+      getItem();
+    }
+    else{
+      searchedList()
+    }
+    
+    
+  }, [search])
   // delete item
   const handleDelete = async (id) => {
     await fetch(`http://localhost:8080/delete/${id}`, {
@@ -45,7 +60,7 @@ export default function ProposalList() {
           <div>
             <h3>Proposals</h3>
             <MdSearch className='searchic mt-2 ms-3' />
-            <input className='ms-2 mt-0' style={{ border: 'none', opacity: '0.5', outline: 'none' }} type="search" placeholder='Search projects' />
+            <input onChange={(e)=>{setSearch(e.target.value)}} value={search} className='ms-2 mt-0' style={{ border: 'none', opacity: '0.5', outline: 'none' }} type="search" placeholder='Search projects' />
           </div>
           <div>
             <span> <MdFilterAlt className='filteric mt-2' /> </span>

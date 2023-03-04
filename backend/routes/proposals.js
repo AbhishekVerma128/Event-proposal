@@ -16,10 +16,10 @@ router.post('/createProposal', async (req, res) => {
             })
         }
         else {
-
+            req.user
             const proposal = await eventSchema.create({
                 eventName, place, proposalType, eventType, budget, date_from, date_to, description,
-                images, food, events
+                images, food, events,postedBy:req.user
             });
 
             return res.status(200).json({

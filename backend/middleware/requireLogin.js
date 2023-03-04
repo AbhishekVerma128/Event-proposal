@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken")
 const jwtToken = "abxhskjsksl";
-const user = require("../model/VendorSchema")
+const vendor = require("../model/VendorSchema")
 
 module.exports = async (req, res,next)=>{
     const {authorization} = req.headers;
@@ -18,7 +18,7 @@ module.exports = async (req, res,next)=>{
             return res.status(401).json({error:"you must have login"})
         }
         const {_id}= payload;
-        const userdata = await user.findById(_id);
+        const userdata = await vendor.findById(_id);
         if(userdata){
             // console.log(userdata);
             req.user = userdata

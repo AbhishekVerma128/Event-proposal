@@ -1,10 +1,17 @@
-img{
+.bg-img{
     width: 100%;
 }
-.proposal-container{
-    margin: 25px 150px 0 150px;
-    padding: 20px;
+.prp-container{
+    margin-left: 20px;
+    padding: 10px;
+    text-align: left;
 }
 .proposalsHeading{
     margin-bottom: 15px;
+}
+.userCard{
+    display: flex;
+    gap:10px;
+    flex-wrap: wrap;
+    /* margin-left: 30px; */
 }
