@@ -1,0 +1,10 @@
+img{
+    width: 100%;
+}
+.proposal-container{
+    margin: 25px 150px 0 150px;
+    padding: 20px;
+}
+.proposalsHeading{
+    margin-bottom: 15px;
+}
