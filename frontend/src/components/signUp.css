@@ -5,6 +5,11 @@
     width: 100%;
    
 }
+.p-logo{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
 .formContainer{
     width: 450px;
     

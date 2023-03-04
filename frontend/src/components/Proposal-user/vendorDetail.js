@@ -1,30 +1,54 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./vendorDetails.css"
 import vendorImage from"../../images/vendor-1.jpg";
+import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const Deatils = () => {
+  const {id} = useParams()
+  const [data,setData]= useState([])
+  const [imgUrl,setImgUrl]=useState("")
+  const navigate = useNavigate()
+  useEffect(()=>{
+    const data = async ()=>{
+      await fetch(`http://localhost:8080/proposal/${id}`,{
+      })
+      .then(res=>res.json())
+      .then(data=>{
+        console.log();
+setImgUrl(data.data.images[0].array[0])
+        setData(data.data);
+      })
+    }
+    data();
+  },[])
+  
+  const selectProposal =()=>{
+    localStorage.setItem("vendorDetail",JSON.stringify(data));
+    navigate("/allProposals")
+  }
   return (
     <div className="vendorDetailsMain">
       <div className='headingDiv'>
       <p id='proposalDetail'>Proposals <i className="fa fa-arrow-right fa-1x" aria-hidden="true"></i> <span id='vendorName'> John Contract</span></p>
-      <button>Select</button>
+      <button onClick={()=>selectProposal()}>Select</button>
       </div>
       <div className="row" style={{height:"50%"}}>
         <div className="col 1stCard">
         <div className="card" >
-          <img className="card-img-top" src={vendorImage} alt="vendor"/>
+          <img className="card-img-top" src={imgUrl} alt="vendor"/>
           <p id='ID'>ID: <span>0001</span></p>
           <div className="card-body" style={{borderBottom:"1px solid lightgray"}}>
             <p className='Lable'>Name: <span className='lableDetails'>VendorName</span></p>
             <p className='Lable'>Email: <span className='lableDetails'>SampleEmail@gmail.com</span></p>
           </div>
           <div className="card-body eventDate"style={{borderBottom:"1px solid lightgray"}}>
-            <p className='Lable'>StartDate: <span className='lableDetails'>25/07/2020</span></p>
-            <p className='Lable'>EndDate: <span className='lableDetails'>25/07/2020</span></p>
+            <p className='Lable'>StartDate: <span className='lableDetails'>{data.date_from}</span></p>
+            <p className='Lable'>EndDate: <span className='lableDetails'>{data.date_from}</span></p>
           </div>
           <div className="card-body eventType">
             <div>
               <h6>Event Type</h6>
-              <h6 id='eventType'>Marriage</h6>
+              <h6 id='eventType'>{data.eventType}</h6>
             </div>
             <div>
               <h6>Event Class</h6>
@@ -39,18 +63,7 @@ const Deatils = () => {
             <div class="card-body secondCard">
               <h5 class="card-title">Venue and Arrangements</h5>
               <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Expedita eaque laboriosam sequi pariatur fugit cumque, deleniti voluptatum excepturi mollitia facilis nemo accusamus 
-                veritatis est necessitatibus totam dicta doloribus deserunt. Id.</p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                <p>
-                Itaque, quisquam assumenda. Culpa odit inventore veniam consequatur sit eos reprehenderit ea
-                repellendus fuga magni, rem, consectetur, perferendis earum enim officia! Quibusdam.
-                </p>
-                <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                Consequuntur nemo nulla placeat aliquid molestias? Optio corporis quia, reprehenderit distinctio assumenda et! 
-                Itaque consequatur aliquid nesciunt aspernatur error molestias dicta aperiam!
+               {data.description}
                 </p>
             </div>
           </div>
@@ -58,20 +71,9 @@ const Deatils = () => {
         <div className="col-md-4">
         <div class="card">
             <div class="card-body secondCard">
-              <h5 class="card-title">Venue and Arrangements</h5>
+              <h5 class="card-title">Foods Prefrences</h5>
               <p class="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Expedita eaque laboriosam sequi pariatur fugit cumque, deleniti voluptatum excepturi mollitia facilis nemo accusamus 
-                veritatis est necessitatibus totam dicta doloribus deserunt. Id.</p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                <p>
-                Itaque, quisquam assumenda. Culpa odit inventore veniam consequatur sit eos reprehenderit ea
-                repellendus fuga magni, rem, consectetur, perferendis earum enim officia! Quibusdam.
-                </p>
-                <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                Consequuntur nemo nulla placeat aliquid molestias? Optio corporis quia, reprehenderit distinctio assumenda et! 
-                Itaque consequatur aliquid nesciunt aspernatur error molestias dicta aperiam!
+              {data.food}
                 </p>
             </div>
           </div>
@@ -84,18 +86,17 @@ const Deatils = () => {
                 <div class="card-body">
                   <h5 class="card-title">My Albums</h5>
                   <div className='imgDiv'>
+                    {/* <img src={vendorImage} alt="vendor" style={{width:"100px",height:"100px"}} />
                     <img src={vendorImage} alt="vendor" style={{width:"100px",height:"100px"}} />
                     <img src={vendorImage} alt="vendor" style={{width:"100px",height:"100px"}} />
-                    <img src={vendorImage} alt="vendor" style={{width:"100px",height:"100px"}} />
-                    <img src={vendorImage} alt="vendor" style={{width:"100px",height:"100px"}} />
-                    <img src={vendorImage} alt="vendor" style={{width:"100px",height:"100px"}} />
-                    <img src={vendorImage} alt="vendor" style={{width:"100px",height:"100px"}} />
+                    <img src={vendorImage} alt="vendor" style={{width:"100px",height:"100px"}} /> */}
+
                     
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-md-4" style={{width:"605px",height:"304px"}}>
+            <div className="col-md-4" style={{width:"605px",height:"250px"}}>
             <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Contacts|12</h5>
@@ -120,16 +121,10 @@ const Deatils = () => {
               </div>
             </div>
             <div className="col md-4" style={{width:"605px",height:"304px"}}>
-            <div class="card">
-                <div class="card-body">
+            <div class="card" style={{height:"250px"}}>
+                <div class="card-body" style={{textAlign:"left"}}>
                   <h4 class="card-title">Events</h4>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Iusto sequi asperiores expedita velit accusantium beatae. 
-                    Placeat adipisci rem, aperiam illo similique aliquam neque quae in fugiat et mollitia? Similique, fugit?</p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Iusto sequi asperiores expedita velit accusantium beatae. 
-                    Placeat adipisci rem, aperiam illo similique aliquam neque quae in fugiat et mollitia? Similique, fugit?</p>
+                  <p>{data.events}</p>
 
                 </div>
               </div>

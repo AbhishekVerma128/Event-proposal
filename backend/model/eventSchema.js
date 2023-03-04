@@ -10,7 +10,7 @@ budget:{type:String,required:true},
 date_from:{type:String, required:true},
 date_to:{type:String, required:true},
 description:{type:String},
-images:[{type:String}],
+images:{type:Array},
 food:{type:String},
 events:{type:String},
 postedBy:{type:ObjectId, ref:"Vendor"}
