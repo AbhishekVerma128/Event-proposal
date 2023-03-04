@@ -14,7 +14,7 @@ export default function EventList({setModal}) {
       </div>
       <div className='event-details'>
        <div>
-        <h4>Event Nmae</h4>
+        <h4>Event Name</h4>
         <p>paragraph .,kjkl' ..................................</p>
        </div>
       </div>

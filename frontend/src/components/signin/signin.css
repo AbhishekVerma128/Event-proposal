@@ -1,0 +1,47 @@
+.main{
+    background-image: url("../images/party-people-enjoy-concert-at-festival-summer-DHDMPWH@2x.jpg");
+    background-size: cover;
+    height:98vh;
+    width: 188vh;
+   
+}
+.logo{
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    padding-left: 30px;
+}
+.container{
+    width: 400px;
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 25%;
+    left: 65%;
+}
+.heading{
+    font-size: 25px;
+    margin-top: 15px;
+    /* UI Properties */
+    text-align: left;
+    letter-spacing: 0.53px;
+    color: #1B2734;
+    opacity: 1;
+}
+.inputDiv{
+    margin: 15px 0;
+}
+input{
+    border-radius: none;
+}
+.BtnContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

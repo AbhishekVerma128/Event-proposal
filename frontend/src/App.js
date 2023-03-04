@@ -1,15 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
-import CreateProposal from './components/CreatePropsal/CreateProposal';
-import { useState } from 'react';
-import EventList from './components/eventList/eventList';
+import {BrowserRouter , Routes, Route} from "react-router-dom";
+//import CreateProposal from './components/CreatePropsal/CreateProposal';
+//import { useState } from 'react';
+//import EventList from './components/eventList/eventList';
+import SignIn from './components/signin/signin';
+
 
 function App() {
-  const [modal,setModal] =useState(false)
+  
   return (
     <div className="App">
-      <EventList setModal={setModal}/>
-      {modal&&<CreateProposal setModal={setModal}/>}
+      
+      {/*<BrowserRouter>
+      <div className="App">
+        <Routes>
+          
+          <Route path='/signin' element={ <SignIn />}/>
+          
+        </Routes>
+      </div>
+    </BrowserRouter>*/}
+      <SignIn/>
     </div>
   );
 }
