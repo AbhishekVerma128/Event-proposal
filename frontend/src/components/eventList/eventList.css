@@ -4,7 +4,7 @@
     box-shadow: 2px 3px #8080802e;
 }
 .container {
-    width: 75%;
+    width: 70%;
     margin: auto;
 }
 .event-header {
@@ -36,7 +36,10 @@
 }
 .event-details{
     text-align: left;
-    border: 1px solid #766D6D;
+    border: 1px solid #c2cfdf;
+}
+.event-details:hover{
+ box-shadow: 2px 4px rgb(202, 206, 211);
 }
 .event-main{
     display: flex;
