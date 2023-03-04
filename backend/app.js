@@ -1,17 +1,21 @@
-const express = require("express");
-const connection = require("./connection/conn")
-const proposals = require("./routes/proposals")
-const singin = require("./routes/login")
-const signup = require("./routes/signup");
-const cors = require("cors");
-const app = express();
-app.use(express.json())
-connection();
+const express = require("express")
+const mongoose = require("mongoose")
+const vendor = require("./routes/vendor")
+const user = require("./routes/user")
+const app = express()
+const cors = require("cors")
 app.use(cors())
-app.use(singin)
-app.use(signup)
-app.use(proposals)
 
 
-app.listen(5000,()=>{
-    console.log("server is up")})
+const DB = 'mongodb+srv://parthThacker:parth1213@cluster0.twdoy22.mongodb.net/?retryWrites=true&w=majority'
+mongoose.connect(DB).then(()=>{console.log("Connected");}).catch((err)=>{console.log(err.message);})
+
+app.use(express.json())
+app.use("/vendor",vendor)
+app.use("/",user)
+
+app.get("/",(req,res)=>{
+    res.send("ok")
+})
+
+app.listen(8080,()=>{console.log("Server is up")})

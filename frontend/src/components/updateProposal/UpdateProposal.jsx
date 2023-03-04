@@ -32,7 +32,7 @@ console.log(place);
 const [data,setData] = useState([])
   useEffect(()=>{
     const data = async ()=>{
-      await fetch(`http://localhost:5000/proposal/${id}`,{
+      await fetch(`http://localhost:8080/proposal/${id}`,{
       })
       .then(res=>res.json())
       .then(data=>{
@@ -54,7 +54,7 @@ const [data,setData] = useState([])
   },[])
   const updateData = async ()=>{
       // saving imageurl and caption in mongo
-   await fetch(`http://localhost:5000/update/${id}`,{
+   await fetch(`http://localhost:8080/update/${id}`,{
       method:"put",
       headers:{
           "Content-Type": "application/json"
