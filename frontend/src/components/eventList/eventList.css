@@ -1,0 +1,64 @@
+.navbar {
+    border-bottom: 2px solid #8080802e;
+    border-top: 1px solid #8080802e;
+    box-shadow: 2px 3px #8080802e;
+}
+.container {
+    width: 70%;
+    margin: auto;
+}
+.event-header {
+    display: flex;
+    justify-content: space-between;
+}
+.event-header div {
+    display: flex;
+}
+.create-btn {
+    background-color: #4E94F4;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    padding: 0px 15px;
+    margin-left: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+.searchic{
+    font-size: x-large;
+    color: #766D6D;
+}
+.filteric{
+    font-size: xx-large;
+    color: #766D6D;
+}
+.event-details{
+    text-align: left;
+    border: 1px solid #c2cfdf;
+}
+.event-details:hover{
+ box-shadow: 2px 4px rgb(202, 206, 211);
+}
+.event-main{
+    display: flex;
+    justify-content: space-between;
+}
+.event-head{
+    display: flex;
+}
+.event-head div{
+    margin-right:1.4rem;
+}
+.event-head p{
+    margin-bottom: 0rem;
+}
+
+.edit{
+    font-size: 24px;
+}
+
+.dlt{
+    font-size: 24px;
+}

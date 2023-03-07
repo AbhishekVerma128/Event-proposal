@@ -8,7 +8,7 @@ const secret = "secretForVendors"
 router.get('/signup',(req,res)=>{
     res.send("ok")
 })
-router.post("/register",async (req,res)=>{
+router.post("/vendor/register",async (req,res)=>{
     const {name,email,contact,password,confirmPassword} = await req.body
     console.log(req.body)
     try{
@@ -36,19 +36,17 @@ router.post("/register",async (req,res)=>{
                 res.json({
                     data:vendor,
                     message:"Registratin Successful",
+                    
             });
            })
         }
-        
     }catch(e){
         console.log(e.message)
     }
-
 })
-
-router.post("/signin",async (req,res)=>{
+router.post("/vendor/signin",async (req,res)=>{
     const {contact,password} = req.body
-    //console.log(req.body)
+    console.log(req.body)
     try{
         if(!contact || !password){
             return res.status(400).json({
@@ -64,30 +62,24 @@ router.post("/signin",async (req,res)=>{
         else{
             bcrypt.compare(password, vendor.password, function(err, result) {
                 // result == true
-                // console.log(vendor.password)
-                // console.log(password===vendor.password)
+                 //console.log(vendor.password)
+                 //console.log(password===vendor.password)
                 if(err){
                     return res.status(400).json({
                         message:err.message
                     })
                 }
-                if(result){
-                    var token = jwt.sign({ data:vendor.contact }, secret);
+                var token = jwt.sign({ data:vendor.contact }, secret);
                     console.log(token)
                     res.status(200).json({
                     data:vendor,
-                    message:"LoIn successful",
+                    message:"LogIn successful",
                     token
                     })
-                }
-                
-
             });
         }
     }catch(e){
         console.log(e.message)
     }
-    
 })
-
 module.exports = router

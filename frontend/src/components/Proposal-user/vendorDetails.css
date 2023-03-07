@@ -44,7 +44,7 @@
     font-weight: 700;
 }
 .Lable{
-    border-radius: 0px 3px 0px 0px;  
+    /* border-radius: 0px 3px 0px 0px;   */
     margin-left: 5px;
     color: #767676;
 }
@@ -89,4 +89,8 @@
 }
 .contactDetails{
     margin-left: 7px;
+}
+.secondCard{
+    height: 500px;
+    text-align: left;
 }
